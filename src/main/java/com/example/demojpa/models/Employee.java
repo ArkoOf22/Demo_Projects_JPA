@@ -1,21 +1,21 @@
 package com.example.demojpa.models;
 
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.GenerationType;
-//import jakarta.persistence.Id;
+
+import jakarta.persistence.*;
 import lombok.*;
-//import org.hibernate.annotations.IdGeneratorType;
 
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
+@Table(name = "Employee_Details")
 public class Employee {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private Integer age;
