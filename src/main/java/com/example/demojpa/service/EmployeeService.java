@@ -8,6 +8,8 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeService {
 
@@ -16,5 +18,13 @@ public class EmployeeService {
     public void save(@Valid Employee employee) {
         empRepository.save(employee);
 
+    }
+
+    public List<Employee> getAll(){
+        return empRepository.findAll();
+    }
+
+    public Employee getById(int id) {
+        return empRepository.findById(id).get();
     }
 }
