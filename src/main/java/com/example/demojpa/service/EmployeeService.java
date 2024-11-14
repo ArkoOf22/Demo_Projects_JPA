@@ -27,4 +27,10 @@ public class EmployeeService {
     public Employee getById(int id) {
         return empRepository.findById(id).get();
     }
+
+    public Employee deleteById(int id) {
+        Employee employee = empRepository.findById(id).get();
+        empRepository.delete(employee);
+        return employee;
+    }
 }
