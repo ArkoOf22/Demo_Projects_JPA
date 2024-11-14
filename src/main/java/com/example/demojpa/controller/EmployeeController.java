@@ -42,4 +42,9 @@ public class EmployeeController {
         return deletedEmp.getName()+ " deleted";
     }
 
+    @PutMapping("/updateEmployee/{id}")
+    public Employee updateEmployeeByID(@PathVariable int id, @RequestBody Employee employee){
+        return employeeService.updateEmployee(id, employee);
+    }
+
 }

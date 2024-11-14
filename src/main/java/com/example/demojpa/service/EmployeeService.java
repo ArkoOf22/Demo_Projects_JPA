@@ -33,4 +33,13 @@ public class EmployeeService {
         empRepository.delete(employee);
         return employee;
     }
+
+    public Employee updateEmployee(int id, Employee employee) {
+        Employee employee1 = empRepository.findById(id).get();
+        employee1.setName(employee.getName());
+        employee1.setAddress(employee.getAddress());
+        employee1.setAge(employee.getAge());
+        empRepository.save(employee1);
+        return employee1;
+    }
 }
